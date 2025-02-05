@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: 'Pacifico', cursive;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Heart Animation */
+  .heart {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: heartbeat 1.5s infinite;
+    margin: 0 auto 20px;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .heart::before {
+    top: -50px;
+    left: 0;
+  }
+  
+  .heart::after {
+    top: 0;
+    left: 50px;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: rotate(-45deg) scale(1);
+    }
+    50% {
+      transform: rotate(-45deg) scale(1.2);
+    }
+  }
+  
+  /* Proposal Text */
+  .proposal-text {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Buttons */
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  #yes-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  #no-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Confetti Animation */
+  .confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .confetti::before,
+  .confetti::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff0;
+    border-radius: 50%;
+    animation: confetti 5s infinite;
+  }
+  
+  .confetti::before {
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  .confetti::after {
+    left: 90%;
+    animation-delay: 2.5s;
+  }
+  
+  @keyframes confetti {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+    }
+  }
